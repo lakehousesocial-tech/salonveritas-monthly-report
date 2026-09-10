@@ -8,7 +8,7 @@
   tone, never salesy. Speaks to a woman who wants her hair color to feel as intentional
   as everything else in her life. (Source: Salon Veritas Brand Kit, Google Drive.)
 - Social channels (scheduled/tracked via Buffer):
-  - Instagram: [add handle]
+  - Instagram: @salonveritas_ (per the Instagram Account Audit artifact)
   - TikTok: [add handle]
   - Facebook: [add Page name]
   (Same three platforms as VanDeVelde — connect each in Buffer the same way before the
@@ -22,7 +22,10 @@
 - No excessive emojis, all caps, or stacked exclamation points.
 - Avoid generic salon phrases as a crutch ("glow up" is fine occasionally, not a tagline).
 
-### Visual Identity (for reference — already applied to the deck's design system)
+### Visual Identity
+
+The physical-brand palette (from the salon's interior design and wordmark, per the
+Salon Veritas Brand Kit):
 
 | Role | Hex | Usage |
 |---|---|---|
@@ -32,9 +35,29 @@
 | Ivory/Cream | `#F5F1EA` | Neutral base — walls/backgrounds |
 | Espresso Walnut | `#2B2620` | Grounding neutral — dark wood, contrast |
 
-Typography: Gill Sans MT (body copy, navigation, UI, and the SALON wordmark). A
-hand-lettered signature script carries "Veritas" in the primary logo lockup but is
-reserved for the logotype/hero headlines/signage — never body copy or report UI.
+**For anything Claude generates as a report/deliverable (this monthly report deck
+included), use the report design-system token set instead** — established by the
+Salon Veritas Instagram Account Audit artifact
+(`https://claude.ai/code/artifact/b300d567-1732-4ed5-aec5-7d20898e7d4f`), which refines
+the same sage/blush/brass family into report-appropriate tokens and pairs them with
+free, embeddable Google Fonts (the brand kit's Gill Sans MT isn't one). This is the
+palette/fonts actually applied in `generate_report.py`:
+
+| Token | Hex | Deck usage |
+|---|---|---|
+| sage (`--sage`) | `#707252` | Headers / primary accent |
+| brass (`--brass`) | `#B8965A` | Chart lines / secondary accent |
+| blush (`--blush`) | `#D99F95` | Sparing emphasis (headline stat only) |
+| bg (`--bg`) | `#FAF7F4` | Slide background |
+| text-primary | `#2A2118` | Body text |
+| text-secondary | `#6B5F55` | Secondary labels |
+| text-caption | `#8A7E74` | Captions / decline callouts |
+| border | `#E2DBD4` | Dividers / rule motif / gridlines |
+
+Typography: **Cormorant Garamond** (display/titles) + **DM Sans** (body/UI), per that
+same artifact — both free Google Fonts, unlike the brand kit's licensed Gill Sans MT.
+Do NOT source branding from the Wix site (`lakehousesocial.wixsite.com/salon-veritas`)
+— it's a work-in-progress refresh, not the settled report design system.
 
 ### Content Pillars
 

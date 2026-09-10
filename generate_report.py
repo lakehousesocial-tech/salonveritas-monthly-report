@@ -2,28 +2,32 @@
 """
 Generates the monthly marketing report .pptx.
 
-Design system: Salon Veritas brand (per the client's Brand Kit -- sage green,
-dusty blush, warm brass, ivory/cream, espresso walnut).
-  - Ivory/Cream (#F5F1EA) background on every slide; Pure White card/table fills
-  - Gill Sans MT throughout (titles bold, body regular) -- the brand kit reserves
-    its hand-lettered signature script for the logotype/hero headlines/signage
-    only, never body copy or small-size UI, so it is not used in this deck
+Design system: Salon Veritas's REPORT design-system tokens, not the raw physical-brand
+palette. The client's Brand Kit specifies sage/blush/brass/ivory/espresso hues paired
+with Gill Sans MT (a licensed Monotype font, not embeddable here) -- but the settled
+source of truth for anything Claude generates as a report is the token system and font
+pairing established by the Salon Veritas Instagram Account Audit artifact
+(https://claude.ai/code/artifact/b300d567-1732-4ed5-aec5-7d20898e7d4f), which refines
+those same hues into report-appropriate tokens and free Google Fonts. Do NOT source
+branding from the Wix site (lakehousesocial.wixsite.com/salon-veritas) -- that's a
+work-in-progress refresh, not the report design system.
+  - --bg (#FAF7F4) background on every slide; Pure White card/table fills
+  - Cormorant Garamond (display/titles) + DM Sans (body/UI) -- both free Google
+    Fonts, per the audit artifact's token system
   - Round bullet (●) lists for body text
   - Layout grid: title at (0.56in, 0.58in), content area starting at (0.56in, 1.24in)
-  - Recurring 1px Rule-colored line under every slide title (signature framing
-    motif); Dusty Blush reserved for sparing emphasis -- currently only the cover
+  - Recurring 1px border-colored line under every slide title (signature framing
+    motif); blush (--blush) reserved for sparing emphasis -- currently only the cover
     slide's accent rule, month chip, and each Insights slide's headline stat
 
-  ink_mid/ink_light/rule below are tints of the brand kit's Espresso Walnut/Sage
-  Green (blended toward Ivory/Cream) for text-hierarchy and divider use -- not
-  literal brand-kit swatches, since the kit only specifies five hues and a UI
-  needs more steps than that for secondary/tertiary text.
+  ink_mid/ink_light below map to the audit artifact's --text-secondary/--text-caption
+  tokens; rule maps to its --border token.
 
   NOTE: fonts are set by name only (run.font.name), not embedded as binary
   font data in the .pptx -- python-pptx has no support for OOXML font
-  embedding. Gill Sans MT ships with Windows/Office and macOS; install it
-  locally on any machine used to review/export the deck so PowerPoint/Keynote
-  render it instead of silently substituting a fallback font.
+  embedding. Cormorant Garamond and DM Sans are both free on Google Fonts;
+  install them locally so PowerPoint/Keynote render them instead of silently
+  substituting a fallback font.
 
 Data-driven slides (Instagram/Facebook/TikTok) are built from a Buffer metrics
 JSON file shaped like the (verified, real) output of buffer-metrics.js:
@@ -118,20 +122,20 @@ from pptx.oxml.ns import qn
 # --------------------------------------------------------------------------
 
 COLORS = {
-    "background": RGBColor(0xF5, 0xF1, 0xEA),   # Ivory/Cream -- slide background
-    "cobalt_deep": RGBColor(0x70, 0x72, 0x52),  # Sage Green -- headers / primary accent
-    "cobalt_mid": RGBColor(0xB0, 0x8D, 0x57),   # Warm Brass -- chart lines / active data elements
-    "gilded": RGBColor(0xD9, 0x9F, 0x95),       # Dusty Blush -- sparing, emphasis only
-    "ink": RGBColor(0x2B, 0x26, 0x20),          # Espresso Walnut -- bullets, table/data-row copy
-    "ink_mid": RGBColor(0x86, 0x81, 0x7B),      # Espresso tinted toward Ivory -- labels, prompts
-    "ink_light": RGBColor(0xB8, 0xB4, 0xAD),    # Espresso tinted further -- decline callouts
-    "card_bg": RGBColor(0xFF, 0xFF, 0xFF),      # Pure White -- card/table backgrounds
-    "white": RGBColor(0xFF, 0xFF, 0xFF),        # header text on the dark Sage Green fill
-    "rule": RGBColor(0xE1, 0xDE, 0xD3),         # Sage tinted toward Ivory -- dividers / gridlines
+    "background": RGBColor(0xFA, 0xF7, 0xF4),   # --bg -- slide background
+    "cobalt_deep": RGBColor(0x70, 0x72, 0x52),  # --sage -- headers / primary accent
+    "cobalt_mid": RGBColor(0xB8, 0x96, 0x5A),   # --brass -- chart lines / active data elements
+    "gilded": RGBColor(0xD9, 0x9F, 0x95),       # --blush -- sparing, emphasis only
+    "ink": RGBColor(0x2A, 0x21, 0x18),          # --text-primary -- bullets, table/data-row copy
+    "ink_mid": RGBColor(0x6B, 0x5F, 0x55),      # --text-secondary -- labels, prompts, headings
+    "ink_light": RGBColor(0x8A, 0x7E, 0x74),    # --text-caption -- decline callouts
+    "card_bg": RGBColor(0xFF, 0xFF, 0xFF),      # --bg-card -- card/table backgrounds
+    "white": RGBColor(0xFF, 0xFF, 0xFF),        # header text on the dark Sage fill
+    "rule": RGBColor(0xE2, 0xDB, 0xD4),         # --border -- dividers / rule motif / gridlines
 }
 
-TITLE_FONT = "Gill Sans MT"
-BODY_FONT = "Gill Sans MT"
+TITLE_FONT = "Cormorant Garamond"
+BODY_FONT = "DM Sans"
 
 SLIDE_W = Inches(10)
 SLIDE_H = Inches(5.62)

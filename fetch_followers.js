@@ -7,6 +7,11 @@
  *
  * Requires Node 18+ (built-in fetch). No external dependencies.
  *
+ * NETWORK: the environment this runs in must allow outbound access to
+ * graph.facebook.com (see SETUP.md, step 3) -- a restrictive/default network
+ * policy blocks this silently, and the failure can look like a bad
+ * token/Page ID rather than a network error.
+ *
  * Env vars (all required):
  *   SALONVERITAS_META_ACCESS_TOKEN  Graph API access token (Page-scoped or a
  *                                 token with pages_read_engagement /

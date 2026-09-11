@@ -7,6 +7,12 @@
  *
  * Requires Node 18+ (built-in fetch). No external dependencies.
  *
+ * NETWORK: the environment this runs in must allow outbound access to
+ * api.buffer.com (see SETUP.md, step 3) -- a restrictive/default network
+ * policy blocks this silently and the failure looks exactly like a bad API
+ * key ("403 Forbidden") rather than a network error, unless you read the
+ * response body this script now surfaces on failure.
+ *
  * Env vars:
  *   SALONVERITAS_BUFFER_API_KEY  (required) Buffer API access token
  *   BUFFER_GRAPHQL_URL         (optional) defaults to https://api.buffer.com/graphql

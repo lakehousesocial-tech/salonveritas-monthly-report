@@ -2,3 +2,4 @@
 [2026-09-11T15:39:50Z] BUFFER FETCH FAILED: GraphQL request failed: 403 Forbidden
 [2026-09-11T15:46:00Z] BUFFER FETCH FAILED: GraphQL request failed: 403 Forbidden
 [2026-09-11T15:56:27Z] BUFFER FETCH FAILED: GraphQL request failed: 403 Forbidden
+[2026-09-11T16:14:48Z] BUFFER FETCH FAILED: GraphQL request failed: 403 Forbidden -- Host not in allowlist: api.buffer.com. Add this host to your network egress settings to allow access.

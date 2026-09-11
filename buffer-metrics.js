@@ -73,7 +73,8 @@ async function graphqlRequest(query, variables) {
   });
 
   if (!res.ok) {
-    throw new Error(`GraphQL request failed: ${res.status} ${res.statusText}`);
+    const bodyText = await res.text().catch(() => '');
+    throw new Error(`GraphQL request failed: ${res.status} ${res.statusText} -- ${bodyText}`);
   }
 
   const json = await res.json();

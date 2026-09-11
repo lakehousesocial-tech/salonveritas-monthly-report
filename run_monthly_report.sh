@@ -12,6 +12,18 @@
 #   SALONVERITAS_FB_PAGE_ID
 #   SALONVERITAS_IG_BUSINESS_ID
 #
+# Step 2 (follower snapshot) is NON-FATAL, unlike VanDeVelde/Ocean Crest --
+# Meta's Graph API has been rejecting every Page-level field on this account
+# beyond basic id/name (followers_count, fan_count, instagram_business_account
+# all error as "nonexisting field" despite the token carrying every relevant
+# permission) even though the same Meta-setup steps work for other clients.
+# Root cause not yet resolved -- see run-log.txt history and SETUP.md. Rather
+# than block the whole monthly report on an unresolved Meta-side issue,
+# a failure here just logs a warning and the pipeline continues without a
+# "Current Followers" card (generate_report.py already handles a missing/
+# empty follower-history.json gracefully). Revisit and make this fatal again
+# once the Meta follower-count query is confirmed working.
+#
 # Unlike VanDeVelde (scheduled for the 1st, reporting on the month that just
 # ended), this Routine is scheduled for the 15th of each month, ahead of the
 # client's mid-month check-in -- so MONTH/YEAR label the CURRENT month, not
@@ -51,8 +63,10 @@ fi
 
 echo "=== Step 2: Pulling follower snapshot (Meta Graph API) ==="
 if ! node fetch_followers.js > /tmp/followers_out.log 2>/tmp/followers_err.log; then
-  log_failure_and_push "FOLLOWER FETCH FAILED: $(cat /tmp/followers_err.log)" "fetch_followers"
-  exit 1
+  echo "[$TIMESTAMP] FOLLOWER FETCH FAILED (non-fatal -- continuing without a follower snapshot this period): $(cat /tmp/followers_err.log)" >> run-log.txt
+  echo "WARNING: follower snapshot failed, continuing without it -- see run-log.txt for details"
+else
+  cat /tmp/followers_out.log
 fi
 
 echo "=== Step 3: Generating deck + auto goals ==="

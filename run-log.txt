@@ -5,3 +5,8 @@
 [2026-09-11T16:14:48Z] BUFFER FETCH FAILED: GraphQL request failed: 403 Forbidden -- Host not in allowlist: api.buffer.com. Add this host to your network egress settings to allow access.
 [2026-09-11T16:26:58Z] FOLLOWER FETCH FAILED: Graph API request failed: Error validating access token: Session has expired on Friday, 11-Sep-26 09:00:00 PDT. The current time is Friday, 11-Sep-26 09:27:00 PDT.
 [2026-09-11T18:06:04Z] FOLLOWER FETCH FAILED: Graph API request failed: (#100) Tried accessing nonexisting field (followers_count)
+[2026-09-11T18:21:42Z] FOLLOWER FETCH FAILED (non-fatal -- continuing without a follower snapshot this period): Graph API request failed: (#100) Tried accessing nonexisting field (followers_count)
+[2026-09-11T18:21:42Z] REPORT GENERATION FAILED: Traceback (most recent call last):
+  File "/home/user/salonveritas-monthly-report/generate_report.py", line 111, in <module>
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'

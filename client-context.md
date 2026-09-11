@@ -7,12 +7,10 @@
 - Brand voice: Refined, warm, intentional, elevated, genuine — an unhurried, confident
   tone, never salesy. Speaks to a woman who wants her hair color to feel as intentional
   as everything else in her life. (Source: Salon Veritas Brand Kit, Google Drive.)
-- Social channels (scheduled/tracked via Buffer):
-  - Instagram: @salonveritas_ (per the Instagram Account Audit artifact)
-  - TikTok: [add handle]
-  - Facebook: [add Page name]
-  (Same three platforms as VanDeVelde — connect each in Buffer the same way before the
-  first run.)
+- Social channels (connected in Buffer, confirmed via the Buffer API):
+  - Instagram: @salonveritas_ (business account)
+  - TikTok: @ashleysalonveritas
+  - Facebook: Salon Veritas (Page)
 
 ### Brand Voice Guardrails (for anyone writing Misc/Wins/Goals bullets by hand)
 

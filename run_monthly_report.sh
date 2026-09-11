@@ -86,13 +86,21 @@ python3 validate_report.py "$OUTPUT" || VALIDATION_OK=0
 
 echo "=== Step 5: Persisting updated state back to the repo ==="
 git add client-context.md follower-history.json run-log.txt >/dev/null 2>&1
-git commit -m "Automated monthly run: ${MONTH} ${YEAR}" >/dev/null 2>&1 || true
-git push origin HEAD:main
 
 if [ "$VALIDATION_OK" -eq 1 ]; then
+  # Commit the .pptx here directly rather than leaving it to the calling
+  # Routine session to read this script's stdout and commit it separately --
+  # that hand-off proved unreliable in practice (the script would finish
+  # cleanly and print OK_TO_UPLOAD, but the outer session wouldn't always
+  # follow through on the commit). Doing it here removes that failure mode.
+  git add -f "$OUTPUT" >/dev/null 2>&1
+  git commit -m "Automated monthly run: ${MONTH} ${YEAR} (report generated)" >/dev/null 2>&1 || true
+  git push origin HEAD:main
   echo "OK_TO_UPLOAD:${OUTPUT}"
   exit 0
 else
+  git commit -m "Automated monthly run: ${MONTH} ${YEAR} (validation failed, report not committed)" >/dev/null 2>&1 || true
+  git push origin HEAD:main
   echo "VALIDATION_FAILED_DO_NOT_UPLOAD"
   exit 1
 fi

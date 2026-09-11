@@ -118,3 +118,13 @@ Do NOT source branding from the Wix site (`lakehousesocial.wixsite.com/salon-ver
 - [ ] Restore TikTok posting cadence — down 60% this period (6 vs. 15 posts). Aim for 15+ posts next period. <!-- check: tiktok.postCount > 15 -->
 - [ ] Improve Facebook engagement quality — rate fell from 2.43% to 0.00% this period. <!-- check: facebook.engagementRate > 2.43 -->
 - [ ] Publish at least one piece of content spotlighting a Milbon Gold Line package with a clear booking CTA — e.g. a treatment before/after paired with the five-week result window — to drive add-on revenue.
+
+### September
+
+**What changed:** Instagram: 11 vs. 6 posts, engagement down (7.06% → 1.21%). TikTok: 6 vs. 15 posts, engagement up (1.70% → 1.75%). Facebook: 8 vs. 3 posts, engagement down (2.43% → 0.00%).
+
+**Goals set:**
+- [ ] Diversify Instagram content — one post drove 60% of this period's total; publish more posts capable of carrying reach on their own rather than relying on a single standout. <!-- check: instagram.topPostShare < 59.8 -->
+- [ ] Restore TikTok posting cadence — down 60% this period (6 vs. 15 posts). Aim for 15+ posts next period. <!-- check: tiktok.postCount > 15 -->
+- [ ] Improve Facebook engagement quality — rate fell from 2.43% to 0.00% this period. <!-- check: facebook.engagementRate > 2.43 -->
+- [ ] Publish at least one piece of content spotlighting a Milbon Gold Line package with a clear booking CTA — e.g. a treatment before/after paired with the five-week result window — to drive add-on revenue.

@@ -11,3 +11,4 @@
     from pptx import Presentation
 ModuleNotFoundError: No module named 'pptx'
 [2026-09-11T18:27:01Z] FOLLOWER FETCH FAILED (non-fatal -- continuing without a follower snapshot this period): Graph API request failed: (#100) Tried accessing nonexisting field (followers_count)
+[2026-09-11T18:33:32Z] FOLLOWER FETCH FAILED (non-fatal -- continuing without a follower snapshot this period): Graph API request failed: (#100) Tried accessing nonexisting field (followers_count)

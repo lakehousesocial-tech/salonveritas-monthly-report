@@ -43,7 +43,7 @@ set -uo pipefail
 cd "$(dirname "$0")"
 
 echo "=== Step 0: Ensuring Python dependencies ==="
-python3 -c "import pptx" 2>/dev/null || pip3 install --quiet python-pptx
+python3 -c "import pptx" 2>/dev/null || python3 -m pip install --quiet python-pptx
 
 MONTH=$(date -u +%B)
 YEAR=$(date -u +%Y)

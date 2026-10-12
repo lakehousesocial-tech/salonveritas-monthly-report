@@ -124,7 +124,18 @@ Do NOT source branding from the Wix site (`lakehousesocial.wixsite.com/salon-ver
 **What changed:** Instagram: 11 vs. 7 posts, engagement down (7.34% → 1.21%). TikTok: 7 vs. 10 posts, engagement down (2.54% → 1.63%). Facebook: 9 vs. 3 posts, engagement down (2.43% → 0.00%).
 
 **Goals set:**
-- [ ] Diversify Instagram content — one post drove 60% of this period's total; publish more posts capable of carrying reach on their own rather than relying on a single standout. <!-- check: instagram.topPostShare < 59.9 -->
+- [x] Diversify Instagram content — one post drove 60% of this period's total; publish more posts capable of carrying reach on their own rather than relying on a single standout. <!-- check: instagram.topPostShare < 59.9 -->
 - [ ] Restore TikTok posting cadence — down 30% this period (7 vs. 10 posts). Aim for 10+ posts next period. <!-- check: tiktok.postCount > 10 -->
 - [ ] Improve Facebook engagement quality — rate fell from 2.43% to 0.00% this period. <!-- check: facebook.engagementRate > 2.43 -->
 - [ ] Publish at least one piece of content spotlighting a Milbon Gold Line package with a clear booking CTA — e.g. a treatment before/after paired with the five-week result window — to drive add-on revenue.
+
+### October
+
+**What changed:** Instagram: 23 vs. 17 posts, engagement up (1.89% → 6.35%). TikTok: 5 vs. 6 posts, engagement up (2.17% → 4.22%). Facebook: 6 vs. 8 posts, engagement flat (0.00% → 0.00%).
+
+**Goals set:**
+- [ ] Maintain Instagram's current posting cadence and engagement level — no concerning trend this period; keep up the consistency next period. <!-- check: instagram.postCount >= 23 -->
+- [ ] Maintain TikTok's current posting cadence and engagement level — no concerning trend this period; keep up the consistency next period. <!-- check: tiktok.postCount >= 5 -->
+- [ ] Restore Facebook posting cadence — down 25% this period (6 vs. 8 posts). Aim for 8+ posts next period. <!-- check: facebook.postCount > 8 -->
+- [ ] Publish at least one piece of content spotlighting a Milbon Gold Line package with a clear booking CTA — e.g. a treatment before/after paired with the five-week result window — to drive add-on revenue.
+- [ ] Close the engagement gap on Facebook — trailing Instagram by 6.4 points (0.00% vs. 6.35%). Borrow whatever content approach is working on Instagram. <!-- check: facebook.engagementRate > 0.0 -->

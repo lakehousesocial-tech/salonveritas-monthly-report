@@ -16,3 +16,7 @@ ModuleNotFoundError: No module named 'pptx'
   File "/home/user/salonveritas-monthly-report/generate_report.py", line 111, in <module>
     from pptx import Presentation
 ModuleNotFoundError: No module named 'pptx'
+[2026-10-15T00:01:35Z] REPORT GENERATION FAILED: Traceback (most recent call last):
+  File "/home/user/salonveritas-monthly-report/generate_report.py", line 111, in <module>
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'
